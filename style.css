@@ -1,0 +1,135 @@
+/* ========== Global Styles ========== */
+body {
+  font-family: 'Orbitron', sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #0e0e0e;
+  overflow-x: hidden;
+  color: #ffffff;
+}
+
+/* ========== Main Background Overlay ========== */
+.main-bg {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+              url('images/bg_raw.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+/* ========== Masked Background Layer with Grading ========== */
+.masked-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/bg_raw.jpg') no-repeat center center fixed;
+  background-size: cover;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  filter: grayscale(50%) brightness(80%) contrast(110%) saturate(120%) blur(2px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.masked-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(255, 0, 128, 0.2), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ========== Title and Text ========== */
+.title-text {
+  font-size: 3rem;
+  color: #ff007f;
+  text-shadow: 2px 2px #000;
+  word-break: break-word;
+  z-index: 2;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.15);
+}
+
+/* ========== Buttons ========== */
+.glow-button {
+  font-weight: bold;
+  box-shadow: 0 0 15px #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff007f;
+}
+
+/* Large Card Buttons */
+.large-card-button {
+  font-size: 2.5rem;
+  padding: 2rem 3rem;
+  border-radius: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 992px) {
+  .large-card-button {
+    font-size: 2rem;
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .large-card-button {
+    font-size: 1.5rem;
+    padding: 1.2rem 2rem;
+  }
+}
+
+/* ========== Developer Footer ========== */
+.dev-section {
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 0.9rem;
+  color: #ccc;
+  z-index: 2;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* ========== Fade-in Animation ========== */
+.fade-in {
+  animation: fadeInSmooth 1.2s ease-in-out both;
+}
+
+@keyframes fadeInSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-display{
+  border: white;
+  box-shadow: 0 0 8px #ff007f;
+  border-radius: 80px;
+  
+}
